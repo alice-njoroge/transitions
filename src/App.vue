@@ -25,4 +25,15 @@ const items = ref([
 
 <style scoped>
 
+.v-enter-active,
+.v-leave-active{
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.v-enter-from,
+.v-leave-to{
+  opacity: 0;
+  transform: translateY(-10px)
+}
+
 </style>
