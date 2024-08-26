@@ -16,7 +16,7 @@ const items = ref([
           style="margin: 2px; padding: 8px; background-color: rgba(200,0,89,0.2) ; border-radius: 5px;">
     {{ showItems ? 'Hide' : 'Show' }} Items
   </button>
-  <transition>
+  <transition name="fade">
     <ul v-if="showItems">
       <li v-for="item in items" :key="item.key"> {{ item.value }}</li>
     </ul>
@@ -25,13 +25,13 @@ const items = ref([
 
 <style scoped>
 
-.v-enter-active,
-.v-leave-active{
-  transition: opacity 1s ease, transform 1s ease;
-}
+.fade-enter-active,
+.fade-leave-active{
+  transition: opacity 5s ease, transform 5s ease;
+} 
 
-.v-enter-from,
-.v-leave-to{
+.fade-enter-from,
+.fade-leave-to{
   opacity: 0;
   transform: translateY(-10px)
 }
